@@ -1,14 +1,49 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../Provider/AuthProvider";
+import {FcGoogle} from "react-icons/fc"
+import Swal from "sweetalert2";
 
 const Login = () => {
+  const { loginWithEmailAndPassword, loginWithGoogle } = useContext(AuthContext);
+
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+
+    loginWithEmailAndPassword(email, password)
+      .then((result) => {
+        Swal.fire("Good job!", "You have Successfully Logged In!", "success");
+      })
+      .catch((error) => {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: error.message,
+        });
+      });
   };
+
+  const handleGoogleLogin = () => {
+    loginWithGoogle()
+    .then(result => {
+      Swal.fire("Well Done!", "You have Successfully Logged In!", "success");
+    })
+    .catch(error => {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: error.message,
+      });
+    })
+  }
+
   return (
-    <div className=" flex">
-      <div className="hero py-5 justify-center">
-        <div className="hero-content flex-col shadow-2xl p-0">
+    <div className="flex my-10">
+      <div className="hero py-5 justify-center ">
+        <div className="hero-content flex-col border md:min-w-[500px] shadow-2xl p-0">
           <div className="w-full  p-0 relative">
             <figure>
               <img
@@ -22,14 +57,14 @@ const Login = () => {
             </div>
           </div>
           <div className="text-center lg:text-left"></div>
-          <div className="card flex-shrink-0  rounded-none  ">
+          <div className="card flex-shrink-0  rounded-none  px-0  w-full">
             <form onSubmit={handleSubmit} className="card-body  ">
-              <div>
+              <div className="">
                 <input
                   type="email"
                   name="email"
                   placeholder="Enter Your email"
-                  className="outline-none border-b-2 px-8  py-4"
+                  className="outline-none w-full border-b-2 px-8 py-4"
                   required
                 />
               </div>
@@ -38,7 +73,7 @@ const Login = () => {
                   type="password"
                   name="password"
                   placeholder="Create password"
-                  className="outline-none border-b-2 px-8  py-4"
+                  className="outline-none w-full border-b-2 px-8  py-4"
                   required
                 />
               </div>
@@ -54,10 +89,10 @@ const Login = () => {
             </form>
             <div className="mx-auto mb-5">
               <button
-                // onClick={handleGoogleLogin}
+                onClick={handleGoogleLogin}
                 className="flex items-center px-2 gap-3 py-2 rounded-3xl  "
               >
-                {/* <FcGoogle className="text-xl" /> */}
+                <FcGoogle className="text-xl" />
                 Continue with Google
               </button>
             </div>

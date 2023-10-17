@@ -8,7 +8,7 @@ const Navbar = () => {
         <NavLink className="hover:bg-transparent" to="/">Home</NavLink>
       </li>
       <li>
-        <NavLink className="hover:bg-transparent" to="/add-product">Add Product</NavLink>
+        <NavLink className="hover:bg-transparent" to="/addProduct">Add Product</NavLink>
       </li>
       <li>
         <NavLink className="hover:bg-transparent" to="/cart">My Cart</NavLink>
