@@ -5,7 +5,7 @@ const Navbar = () => {
   const links = (
     <>
       <li>
-        <NavLink className="hover:bg-transparent" to="/home">Home</NavLink>
+        <NavLink className="hover:bg-transparent" to="/">Home</NavLink>
       </li>
       <li>
         <NavLink className="hover:bg-transparent" to="/add-product">Add Product</NavLink>
