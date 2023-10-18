@@ -1,0 +1,33 @@
+[
+    {
+      "Id": 1,
+      "brandName": "apple",
+      "brandImage": "https://images.unsplash.com/photo-1621768216002-5ac171876625?auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YXBwbGUlMjBsb2dvfGVufDB8fDB8fHww&w=500"
+    },
+    {
+      "Id": 2,
+      "brandName": "samsung",
+      "brandImage": "https://images.unsplash.com/photo-1661347998423-b15d37d6f61e?auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8c2Ftc3VuZyUyMGxvZ298ZW58MHx8MHx8fDA%3D&w=500"
+    },
+    {
+      "Id": 3,
+      "brandName": "google",
+      "brandImage": "https://images.unsplash.com/photo-1573804633927-bfcbcd909acd?auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Z29vZ2xlJTIwbG9nb3xlbnwwfHwwfHx8MA%3D%3D&w=500"
+    },
+    {
+      "Id": 4,
+      "brandName": "sony",
+      "brandImage": "https://images.unsplash.com/photo-1662948261084-3bc2edb807d2?auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c29ueSUyMGxvZ298ZW58MHx8MHx8fDA%3D&w=500"
+    },
+    {
+      "Id": 5,
+      "brandName": "intel",
+      "brandImage": "https://images.unsplash.com/photo-1646627928017-969b372e2727?auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW50ZWwlMjBsb2dvfGVufDB8fDB8fHww&w=500"
+    },
+    {
+      "Id": 6,
+      "brandName": "lg",
+      "brandImage": "https://images.unsplash.com/photo-1590664177914-9da6d6e8f0f6?auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8TEclMjBMb2dvfGVufDB8fDB8fHww&w=500"
+    }
+  ]
+  
