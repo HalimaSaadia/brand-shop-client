@@ -1,5 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, json } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const AddProduct = () => {
   const handleSubmit = (e) => {
@@ -23,6 +24,26 @@ const AddProduct = () => {
         description,
         rating
     }
+
+    fetch('http://localhost:5000/products', {
+      method: "POST",
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify(product)
+    })
+    .then(res => res.json())
+    .then(data => {
+      if(data.insertedId){
+        Swal.fire(
+          {
+            title: "Success!",
+            text: 'Product added Successfully',
+            icon:"success"
+          }
+        )
+      }
+    })
     console.log(product)
   };
   return (
@@ -46,7 +67,7 @@ const AddProduct = () => {
           <div className="card flex-shrink-0  rounded-none  px-0  w-full">
             <form onSubmit={handleSubmit} className="card-body space-y-10">
 
-              <div className="flex flex-col md:flex-row gap-5  justify-between">
+              <div className="flex flex-col md:flex-row gap-10  justify-between">
                 <div className="flex-1">
                   
                   <input
@@ -69,7 +90,7 @@ const AddProduct = () => {
                 </div>
               </div>
 
-              <div className="flex flex-col md:flex-row gap-5  justify-between">
+              <div className="flex flex-col md:flex-row gap-10  justify-between">
                 <div className="flex-1">
                 
                   <input
@@ -92,7 +113,7 @@ const AddProduct = () => {
                 </div>
               </div>
 
-              <div className="flex flex-col md:flex-row gap-5  justify-between">
+              <div className="flex flex-col md:flex-row gap-10  justify-between">
                 <div className="flex-1">
                
                   <input
@@ -115,7 +136,7 @@ const AddProduct = () => {
                 </div>
               </div>
 
-              <div className="flex flex-col md:flex-row gap-5  justify-between">
+              <div className="flex flex-col md:flex-row gap-10  justify-between">
                 <div className="flex-1">
                  
                   <input

@@ -83,7 +83,7 @@ const Login = () => {
                   type="submit"
                   className="btn bg-[#E74C3C] text-white hover:text-black"
                 >
-                  Login
+                  Sign In
                 </button>
               </div>
             </form>
@@ -100,7 +100,7 @@ const Login = () => {
               <p>
                 Don't have Account?{" "}
                 <Link className="text-blue-700" to="/register">
-                  Register
+                  Sign Up
                 </Link>
               </p>
             </div>

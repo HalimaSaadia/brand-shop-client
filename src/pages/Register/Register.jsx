@@ -55,7 +55,7 @@ const Register = () => {
   return (
     <div className="flex justify-center my-10 ">
       <div className="shadow-2xl">
-      <h1 className="text-4xl font-bold text-center py-5">sign up</h1>
+      <h1 className="text-4xl font-bold text-center py-5">Sign up</h1>
         <div className="card lg:card-side rounded-none ">
            
           <figure className="">
@@ -115,7 +115,7 @@ const Register = () => {
                         type="submit"
                         className="btn bg-[#E74C3C] text-white hover:text-black"
                       >
-                        Register
+                        Sign up
                       </button>
                     </div>
                   </form>
@@ -123,7 +123,7 @@ const Register = () => {
                     <p>
                       Already have Account?{" "}
                       <Link className="text-blue-700" to="/login">
-                        Login
+                        Sign In
                       </Link>
                     </p>
                   </div>
