@@ -44,16 +44,16 @@ const Details = () => {
         <figure className="lg:w-1/2">
           <img src={photo} alt="Album" className="h-full w-full" />
         </figure>
-        <div className="lg:w-1/2  pb-0 ">
-          <div className="card-body pb-0 lg:pb-10">
+        <div className="lg:w-1/2 relative">
+          <div className="card-body ">
             <h2 className="card-title font-bold text-2xl">{name}</h2>
             <h3 className="text-xl font-bold">Brand: {brandName}</h3>
             <p>{description}</p>
             <p className="font-bold">Price: ${price}</p>
             <p className="font-semibold">category: {type}</p>
-            <p className="font-semibold">Rating: {rating}</p>,
+            <p className="font-semibold ">Rating: {rating}</p>,
           </div>
-          <div className="w-full">
+          <div className="w-full absolute bottom-0">
             <button
               onClick={handleAddToCart}
               className="btn rounded-t-none lg:rounded-none  bg-[#E74C3C] w-full  text-white hover:text-black"
