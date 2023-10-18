@@ -19,7 +19,7 @@ const Product = ({ product }) => {
      
         ,
         <div className="card-actions">
-         <Link to="/details"> <button className="btn bg-[#E74C3C] text-white hover:text-black"><CgDetailsMore /> Details</button></Link>
+         <Link to={`/details/${product._id}`}> <button className="btn bg-[#E74C3C] text-white hover:text-black"><CgDetailsMore /> Details</button></Link>
           <Link to="/update"><button className="btn bg-[#2B3440] text-white hover:text-black"><FiEdit /> Edit</button></Link>
         </div>
       </div>

@@ -4,7 +4,7 @@ import HomePageBrands from "../../components/HomePageBrands/HomePageBrands";
 
 const Home = () => {
     return (
-        <div>
+        <div className="-z-10">
             <HomePageBanner />
             <HomePageBrands />
         </div>

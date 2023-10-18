@@ -10,41 +10,39 @@ const AddProduct = () => {
     const photo = form.photo.value;
     const name = form.name.value;
     const brandName = form.brandName.value;
-    const type = form.type.value
+    const type = form.type.value;
     const price = form.price.value;
-    const description = form.description.value
-    const rating = form.rating.value
+    const description = form.description.value;
+    const rating = form.rating.value;
 
     const product = {
-        photo,
-        name,
-        brandName,
-        type,
-        price,
-        description,
-        rating
-    }
+      photo,
+      name,
+      brandName,
+      type,
+      price,
+      description,
+      rating,
+    };
 
-    fetch('http://localhost:5000/products', {
+    fetch("http://localhost:5000/products", {
       method: "POST",
       headers: {
-        'content-type': 'application/json'
+        "content-type": "application/json",
       },
-      body: JSON.stringify(product)
+      body: JSON.stringify(product),
     })
-    .then(res => res.json())
-    .then(data => {
-      if(data.insertedId){
-        Swal.fire(
-          {
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.insertedId) {
+          Swal.fire({
             title: "Success!",
-            text: 'Product added Successfully',
-            icon:"success"
-          }
-        )
-      }
-    })
-    console.log(product)
+            text: "Product added Successfully",
+            icon: "success",
+          });
+        }
+      });
+    console.log(product);
   };
   return (
     <div className="flex my-10">
@@ -52,7 +50,6 @@ const AddProduct = () => {
         <div className="hero-content flex-col border md:min-w-[600px] lg:min-w-[700px] shadow-2xl p-0">
           <div className="w-full  p-0 relative ">
             <figure>
-                
               <img
                 src="https://images.unsplash.com/photo-1468495244123-6c6c332eeece?auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Z2FkZ2V0c3xlbnwwfHwwfHx8MA%3D%3D&w=500"
                 alt="Shoes"
@@ -66,10 +63,11 @@ const AddProduct = () => {
           <div className="text-center lg:text-left"></div>
           <div className="card flex-shrink-0  rounded-none  px-0  w-full">
             <form onSubmit={handleSubmit} className="card-body space-y-10">
-
               <div className="flex flex-col md:flex-row gap-10  justify-between">
                 <div className="flex-1">
-                  
+                  <label className="label">
+                    <span className="label-text">Product Image</span>
+                  </label>
                   <input
                     type="text"
                     name="photo"
@@ -79,7 +77,9 @@ const AddProduct = () => {
                   />
                 </div>
                 <div className="flex-1">
-              
+                  <label className="label">
+                    <span className="label-text">Product Name</span>
+                  </label>
                   <input
                     type="text"
                     name="name"
@@ -92,7 +92,9 @@ const AddProduct = () => {
 
               <div className="flex flex-col md:flex-row gap-10  justify-between">
                 <div className="flex-1">
-                
+                  <label className="label">
+                    <span className="label-text">Brand Name</span>
+                  </label>
                   <input
                     type="text"
                     name="brandName"
@@ -102,7 +104,9 @@ const AddProduct = () => {
                   />
                 </div>
                 <div className="flex-1">
-                
+                  <label className="label">
+                    <span className="label-text">Product Type</span>
+                  </label>
                   <input
                     type="text"
                     name="type"
@@ -115,7 +119,9 @@ const AddProduct = () => {
 
               <div className="flex flex-col md:flex-row gap-10  justify-between">
                 <div className="flex-1">
-               
+                  <label className="label">
+                    <span className="label-text">Product Price</span>
+                  </label>
                   <input
                     type="text"
                     name="price"
@@ -125,7 +131,9 @@ const AddProduct = () => {
                   />
                 </div>
                 <div className="flex-1">
-                 
+                  <label className="label">
+                    <span className="label-text">Description</span>
+                  </label>
                   <input
                     type="text"
                     name="description"
@@ -138,7 +146,9 @@ const AddProduct = () => {
 
               <div className="flex flex-col md:flex-row gap-10  justify-between">
                 <div className="flex-1">
-                 
+                  <label className="label">
+                    <span className="label-text">Rating</span>
+                  </label>
                   <input
                     type="text"
                     name="rating"
@@ -147,7 +157,6 @@ const AddProduct = () => {
                     required
                   />
                 </div>
-                
               </div>
 
               <div className="form-control mt-6">
