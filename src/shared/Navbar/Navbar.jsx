@@ -71,10 +71,14 @@ const Navbar = () => {
               {links}
             </ul>
           </div>
-          <Link className=" normal-case text-xl ">TechHive</Link>
+          <div className="flex items-center">
+            <img className="h-12" src="https://i.postimg.cc/pLfPcHJz/download3-1.png" alt="" />
+            <p className=" normal-case text-xl ">TechHive</p>
+          </div>
+     
         </div>
 
-        <div className="navbar-end">
+        <div className="navbar-end ">
           <div className=" hidden lg:flex">
             <ul className="menu menu-horizontal px-1">{links}</ul>
           </div>

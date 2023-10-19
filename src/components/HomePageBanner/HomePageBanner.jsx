@@ -4,7 +4,7 @@ const HomePageBanner = () => {
   return (
 
       <div
-        className="hero min-h-[550px] my-10"
+        className="hero min-h-[550px] my-16"
         style={{
           backgroundImage:
             "url(https://images.unsplash.com/photo-1515940175183-6798529cb860?auto=format&fit=crop&q=80&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&w=1629)",

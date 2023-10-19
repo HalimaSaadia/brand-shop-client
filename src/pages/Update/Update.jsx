@@ -50,7 +50,7 @@ const Update = () => {
     
   };
   return (
-    <div className="flex my-10">
+    <div className="flex my-10 overflow-hidden">
       <div className="hero py-5 justify-center ">
         <div className="hero-content flex-col border md:min-w-[600px] lg:min-w-[700px] shadow-2xl p-0">
           <div className="w-full  p-0 relative ">
@@ -62,7 +62,7 @@ const Update = () => {
               />
             </figure>
             <div className="absolute top-0 left-0 h-full w-full bg-black opacity-60 flex justify-center items-center ">
-              <h1 className="text-4xl text-white font-bold">Update Product</h1>
+              <h1 className="text-4xl text-center text-white font-bold">Update Product</h1>
             </div>
           </div>
           <div className="text-center lg:text-left"></div>

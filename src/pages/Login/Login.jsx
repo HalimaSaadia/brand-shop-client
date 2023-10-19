@@ -1,11 +1,14 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link,  useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import {FcGoogle} from "react-icons/fc"
 import Swal from "sweetalert2";
 
 const Login = () => {
   const { loginWithEmailAndPassword, loginWithGoogle } = useContext(AuthContext);
+
+  const location = useLocation()
+  const navigate = useNavigate()
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -16,6 +19,11 @@ const Login = () => {
     loginWithEmailAndPassword(email, password)
       .then((result) => {
         Swal.fire("Good job!", "You have Successfully Logged In!", "success");
+        if(location.state){
+          navigate(location.state)
+        }else{
+          navigate("/")
+        }
       })
       .catch((error) => {
         Swal.fire({
@@ -30,6 +38,11 @@ const Login = () => {
     loginWithGoogle()
     .then(result => {
       Swal.fire("Well Done!", "You have Successfully Logged In!", "success");
+      if(location.state){
+        navigate(location.state)
+      }else{
+        navigate("/")
+      }
     })
     .catch(error => {
       Swal.fire({

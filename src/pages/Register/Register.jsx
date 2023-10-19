@@ -53,7 +53,7 @@ const Register = () => {
     }
   };
   return (
-    <div className="flex justify-center my-10 ">
+    <div className="flex justify-center my-10 overflow-hidden">
       <div className="shadow-2xl">
       <h1 className="text-4xl font-bold text-center py-5">Sign up</h1>
         <div className="card lg:card-side rounded-none ">

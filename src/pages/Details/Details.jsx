@@ -1,8 +1,10 @@
 import React from "react";
 import { Link, useLoaderData } from "react-router-dom";
-import { FiEdit } from "react-icons/fi";
+import { AiFillStar } from "react-icons/ai";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import Swal from "sweetalert2";
+import Rating from "react-rating";
+import SectionHeading from "../../shared/SectionHeading/SectionHeading";
 
 const Details = () => {
   const product = useLoaderData();
@@ -40,6 +42,7 @@ const Details = () => {
   };
   return (
     <div className="my-10 pb-10 ">
+      <SectionHeading text={`All about ${name}`}/>
       <div className="card justify-between rounded-none lg:card-side bg-base-100 shadow-xl">
         <figure className="lg:w-1/2">
           <img src={photo} alt="Album" className="h-full w-full" />
@@ -51,9 +54,17 @@ const Details = () => {
             <p>{description}</p>
             <p className="font-bold">Price: ${price}</p>
             <p className="font-semibold">category: {type}</p>
-            <p className="font-semibold ">Rating: {rating}</p>,
+            <p className="font-semibold ">Rating: {rating}</p>
+           
+              <Rating
+                readonly
+                emptySymbol={<AiFillStar />}
+                fullSymbol={<AiFillStar className="text-[#E74C3C] " />}
+                initialRating={rating}
+              />
+            
           </div>
-          <div className="w-full absolute bottom-0">
+          <div className="w-full">
             <button
               onClick={handleAddToCart}
               className="btn rounded-t-none lg:rounded-none  bg-[#E74C3C] w-full  text-white hover:text-black"
