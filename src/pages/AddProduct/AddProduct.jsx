@@ -25,7 +25,7 @@ const AddProduct = () => {
       rating,
     };
 
-    fetch("http://localhost:5000/products", {
+    fetch("https://10-brand-shop-server-six.vercel.app/products", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -42,10 +42,10 @@ const AddProduct = () => {
           });
         }
       });
-    console.log(product);
+
   };
   return (
-    <div className="flex my-10">
+    <div className="flex my-10 px-3 md:px-10">
       <div className="hero py-5 justify-center ">
         <div className="hero-content flex-col border md:min-w-[600px] lg:min-w-[700px] shadow-2xl p-0">
           <div className="w-full  p-0 relative ">

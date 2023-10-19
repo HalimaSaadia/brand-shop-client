@@ -1,11 +1,11 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-const HomePageBrand = ({ brand }) => {
+const HomePageBrand = ({ brand, theme }) => {
   const { brandName, brandImage } = brand;
   const navigate = useNavigate()
   return (
-    <div onClick={()=> navigate(`/products/${brandName}`)} className="card p-0 bg-base-100 shadow-xl image-full hover:cursor-pointer ">
+    <div onClick={()=> navigate(`/products/${brandName}`)} className={`card p-0 bg-base-100 shadow-xl  image-full hover:cursor-pointer `}>
       <figure>
         <img src={brandImage} alt="Shoes" className="object-top" />
       </figure>

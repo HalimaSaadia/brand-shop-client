@@ -6,7 +6,6 @@ const CartItem = ({ cartItem, setCartItems, cartItems }) => {
   const handleDeleteFromCart = (id) => {
     Swal.fire({
       title: "Are you sure?",
-      text: "You won't be able to revert this!",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
@@ -14,7 +13,7 @@ const CartItem = ({ cartItem, setCartItems, cartItems }) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/cart/${id}`, {
+        fetch(`https://10-brand-shop-server-six.vercel.app/cart/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -53,7 +52,7 @@ const CartItem = ({ cartItem, setCartItems, cartItems }) => {
       </div>
 
       <div className="flex-1 text-center">
-        <p className="font-bold">{price}</p>
+        <p className="font-bold">$ {price}</p>
       </div>
 
       <div className="  text-end">

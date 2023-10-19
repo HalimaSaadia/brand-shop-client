@@ -6,19 +6,19 @@ import Drawer from "react-modern-drawer";
 import "react-modern-drawer/dist/index.css";
 import FAQ from "../FAQ/FAQ";
 
-const HomePageDrawer = () => {
+const HomePageDrawer = ({theme}) => {
   const [isOpen, setIsOpen] = React.useState(false);
   const toggleDrawer = () => {
     setIsOpen((prevState) => !prevState);
   };
   return (
-    <div className="z-50">
+    <div className={`z-50 bg-purple-400`}>
       <Drawer
         open={isOpen}
         onClose={toggleDrawer}
         direction="right"
         size={310}
-        className="bla bla bla w-[500px]"
+        className={`bla bla bla w-[500px] `}
       >
         <div>
           <FAQ toggleDrawer={toggleDrawer} />
@@ -31,7 +31,7 @@ const HomePageDrawer = () => {
           <div className="h-full flex justify-center items-center">
          
             <FaQuestion  className="text-2xl sm:text-4xl"/>
-            {/* <button onClick={toggleDrawer}>Show</button> */}
+           
           </div>
         </div>
       </div>

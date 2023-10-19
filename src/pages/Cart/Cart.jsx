@@ -8,8 +8,8 @@ const Cart = () => {
   const [cartItems, setCartItems] = useState(loadedData);
 
   return (
-    <div className="my-10">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+    <div className="my-10 px-3 md:px-10">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 space-y-5">
         {cartItems.map((cartItem) => (
           <CartItem key={cartItem._id} cartItems={cartItems} setCartItems={setCartItems} cartItem={cartItem} />
         ))}

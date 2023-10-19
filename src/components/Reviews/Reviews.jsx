@@ -13,14 +13,16 @@ import { EffectCards } from "swiper/modules";
 import Rating from "react-rating";
 import SectionHeading from "../../shared/SectionHeading/SectionHeading";
 
-
-
-export default function Reviews() {
+export default function Reviews({ theme }) {
   return (
-    <div className="my-10 overflow-hidden ">
-        <SectionHeading text="Our Happy Client"/>
-      <div className="grid grid-cols-1  lg:grid-cols-2 xl:grid-cols-3 gap-10 ">
+    <div className="py-10 overflow-hidden ">
+      <h1
+        className={`text-4xl text-center my-10  text-[{theme === 'light'? #2B3440 :  white }] font-bold py-3`}
+      >
+        Our Happy Client
+      </h1>
 
+      <div className="grid grid-cols-1  lg:grid-cols-2 xl:grid-cols-3 gap-10 ">
         <Swiper
           effect={"cards"}
           grabCursor={true}
@@ -38,10 +40,7 @@ export default function Reviews() {
                 <h1 className="text-2xl font-bold">Emily Johnson</h1>
                 <Rating
                   readonly
-                  emptySymbol={
-                    <AiFillStar />
-                   
-                  }
+                  emptySymbol={<AiFillStar />}
                   fullSymbol={<AiFillStar className="text-[#E74C3C]" />}
                   initialRating={4.5}
                 />
@@ -64,10 +63,7 @@ export default function Reviews() {
                 <h1 className="text-2xl font-bold">Michael Smith</h1>
                 <Rating
                   readonly
-                  emptySymbol={
-                    <AiFillStar />
-                   
-                  }
+                  emptySymbol={<AiFillStar />}
                   fullSymbol={<AiFillStar className="text-[#E74C3C]" />}
                   initialRating={4.3}
                 />
@@ -121,10 +117,7 @@ export default function Reviews() {
                 <h1 className="text-2xl font-bold">Olivia Wilson</h1>
                 <Rating
                   readonly
-                  emptySymbol={
-                    <AiFillStar />
-                   
-                  }
+                  emptySymbol={<AiFillStar />}
                   fullSymbol={<AiFillStar className="text-[#E74C3C]" />}
                   initialRating={4.5}
                 />
@@ -147,10 +140,7 @@ export default function Reviews() {
                 <h1 className="text-2xl font-bold">James Brown</h1>
                 <Rating
                   readonly
-                  emptySymbol={
-                    <AiFillStar />
-                   
-                  }
+                  emptySymbol={<AiFillStar />}
                   fullSymbol={<AiFillStar className="text-[#E74C3C]" />}
                   initialRating={4.7}
                 />
@@ -226,15 +216,13 @@ export default function Reviews() {
                 <h1 className="text-2xl font-bold">Emma Miller</h1>
                 <Rating
                   readonly
-                  emptySymbol={
-                    <AiFillStar />
-                   
-                  }
+                  emptySymbol={<AiFillStar />}
                   fullSymbol={<AiFillStar className="text-[#E74C3C]" />}
                   initialRating={4.7}
                 />
                 <p className="text-sm font-normal">
-                I can't believe how much of a difference this product has made in my life. It's worth every penny!
+                  I can't believe how much of a difference this product has made
+                  in my life. It's worth every penny!
                 </p>
               </div>
             </div>
@@ -251,21 +239,18 @@ export default function Reviews() {
                 <h1 className="text-2xl font-bold">Noah Davis</h1>
                 <Rating
                   readonly
-                  emptySymbol={
-                    <AiFillStar />
-                   
-                  }
+                  emptySymbol={<AiFillStar />}
                   fullSymbol={<AiFillStar className="text-[#E74C3C]" />}
                   initialRating={4.7}
                 />
                 <p className="text-sm font-normal">
-                I'm so impressed with the quality of this product. I've recommended it to all of my friends and family members
+                  I'm so impressed with the quality of this product. I've
+                  recommended it to all of my friends and family members
                 </p>
               </div>
             </div>
           </SwiperSlide>
         </Swiper>
-
       </div>
     </div>
   );

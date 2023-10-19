@@ -21,7 +21,7 @@ const Details = () => {
       rating,
     };
 
-    fetch("http://localhost:5000/cart", {
+    fetch("https://10-brand-shop-server-six.vercel.app/cart", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -37,33 +37,35 @@ const Details = () => {
             icon: "success",
           });
         }
-        console.log(data);
+
       });
   };
   return (
-    <div className="my-10 pb-10 ">
-      <SectionHeading text={`All about ${name}`}/>
-      <div className="card justify-between rounded-none lg:card-side bg-base-100 shadow-xl">
+    <div className="my-10 pb-10 px-3 md:px-10">
+      <SectionHeading text={`All about ${name}`} />
+      <div className="card lg:max-h-[500px] justify-between rounded-none lg:card-side bg-base-100 shadow-xl">
         <figure className="lg:w-1/2">
-          <img src={photo} alt="Album" className="h-full w-full" />
+          <img src={photo} alt="Album" className="h-full md:h-[300px] lg:h-full  w-full" />
         </figure>
-        <div className="lg:w-1/2 relative">
-          <div className="card-body ">
-            <h2 className="card-title font-bold text-2xl">{name}</h2>
-            <h3 className="text-xl font-bold">Brand: {brandName}</h3>
-            <p>{description}</p>
-            <p className="font-bold">Price: ${price}</p>
-            <p className="font-semibold">category: {type}</p>
-            <p className="font-semibold ">Rating: {rating}</p>
-           
+        <div className="lg:w-1/2 flex flex-col justify-between">
+          <div>
+            <div className="card-body ">
+              <h2 className="card-title font-bold text-2xl">{name}</h2>
+              <h3 className="text-xl font-bold">Brand: {brandName}</h3>
+              <p>{description}</p>
+              <p className="font-bold">Price: ${price}</p>
+              <p className="font-semibold">category: {type}</p>
+              <p className="font-semibold ">Rating: {rating}</p>
+
               <Rating
                 readonly
                 emptySymbol={<AiFillStar />}
                 fullSymbol={<AiFillStar className="text-[#E74C3C] " />}
                 initialRating={rating}
               />
-            
+            </div>
           </div>
+
           <div className="w-full">
             <button
               onClick={handleAddToCart}

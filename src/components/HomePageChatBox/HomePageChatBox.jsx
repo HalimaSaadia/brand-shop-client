@@ -5,14 +5,6 @@ import { MdOutlineMessage } from "react-icons/md";
 const HomePageChatBox = () => {
   return (
     <div>
-      {/* You can open the modal using document.getElementById('ID').showModal() method */}
-      {/* <button
-        className="btn"
-        onClick={() => document.getElementById("my_modal_3").showModal()}
-      >
-        open modal
-      </button> */}
-
       <div
         className="avatar cursor-pointer fixed bottom-0 z-50"
         onClick={() => document.getElementById("my_modal_3").showModal()}
@@ -33,7 +25,15 @@ const HomePageChatBox = () => {
           </form>
 
           <div>
-            <div className="text-center flex justify-center">
+            <div className="text-center grid justify-center">
+              <div>
+                <img
+                  className="w-16 mx-auto"
+                  src="https://i.postimg.cc/pLfPcHJz/download3-1.png"
+                  alt=""
+                />
+               <p className=" normal-case text-xl ">TechHive</p>
+              </div>
               <h2 className="card-title font-bold text-xl py-5">
                 Customer Support Desk
               </h2>

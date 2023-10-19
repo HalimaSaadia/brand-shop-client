@@ -10,11 +10,13 @@ import Details from "../pages/Details/Details";
 import Update from "../pages/Update/Update";
 import Cart from "../pages/Cart/Cart";
 import PrivateRoute from "./PrivateRoute";
+import ErrorPage from "../pages/ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <Root />,
+        errorElement: <ErrorPage />,
         children:[
             {
                 path: "/",
@@ -27,22 +29,23 @@ const router = createBrowserRouter([
             {
                 path:"/products/:brand",
                 element: <PrivateRoute><Products /></PrivateRoute>,
+                loader: ({params})=> fetch(`https://10-brand-shop-server-six.vercel.app/slider/${params.brand}`)
                 
             },
             {
                 path: "/details/:id",
                 element: <PrivateRoute><Details /></PrivateRoute>,
-                loader: ({params})=> fetch(`http://localhost:5000/product/${params.id}`)
+                loader: ({params})=> fetch(`https://10-brand-shop-server-six.vercel.app/product/${params.id}`)
             },
             {
                 path: "/update/:id",
                 element:<PrivateRoute> <Update /></PrivateRoute>,
-                loader: ({params})=> fetch(`http://localhost:5000/product/${params.id}`)
+                loader: ({params})=> fetch(`https://10-brand-shop-server-six.vercel.app/product/${params.id}`)
             },
             {
                 path: "/cart",
                 element: <PrivateRoute><Cart /></PrivateRoute>,
-                loader: ()=> fetch("http://localhost:5000/cart")
+                loader: ()=> fetch("https://10-brand-shop-server-six.vercel.app/cart")
             },
             {
                 path: "/login",

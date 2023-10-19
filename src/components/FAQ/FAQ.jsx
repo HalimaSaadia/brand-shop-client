@@ -5,7 +5,7 @@ const FAQ = ({toggleDrawer}) => {
     const [allFaq, setAllFaq] = useState([])
      
     useEffect(()=> {
-        fetch('http://localhost:5000/faq')
+        fetch('https://10-brand-shop-server-six.vercel.app/faq')
         .then(res => res.json())
         .then(data => setAllFaq(data))
     },[])

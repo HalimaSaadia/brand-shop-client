@@ -16,7 +16,6 @@ const Update = () => {
     const newBrandName = form.brandName.value;
     const newType = form.type.value;
     const newPrice = form.price.value;
-    const newDescription = form.description.value;
     const newRating = form.rating.value;
     const updatedProduct = {
       photo:newPhoto,
@@ -24,13 +23,12 @@ const Update = () => {
       brandName:newBrandName,
       type:newType,
       price:newPrice,
-      description:newDescription,
       rating:newRating,
      
     };
  
 
-    fetch(`http://localhost:5000/product/${id}`, {
+    fetch(`https://10-brand-shop-server-six.vercel.app/product/${id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",
@@ -142,22 +140,6 @@ const Update = () => {
                 </div>
                 <div className="flex-1">
                   <label className="label">
-                    <span className="label-text">Description</span>
-                  </label>
-                  <input
-                    type="text"
-                    name="description"
-                    placeholder="Enter Your Product's Description"
-                    className="outline-none w-full border-b-2 px-1 py-3"
-                    defaultValue={description}
-                    required
-                  />
-                </div>
-              </div>
-
-              <div className="flex flex-col md:flex-row gap-10  justify-between">
-                <div className="flex-1">
-                  <label className="label">
                     <span className="label-text">Rating</span>
                   </label>
                   <input
@@ -170,6 +152,8 @@ const Update = () => {
                   />
                 </div>
               </div>
+
+            
 
               <div className="form-control mt-6">
                 <button

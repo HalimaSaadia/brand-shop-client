@@ -1,11 +1,12 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
 import { Result } from "postcss";
 
 const Register = () => {
   const { createUser, updateUser } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -13,7 +14,6 @@ const Register = () => {
     const email = e.target.email.value;
     const password = e.target.password.value;
     const photo = e.target.photo.value;
-    console.log(name, password, photo, email);
     if (password.length < 6) {
       return Swal.fire({
         text: "password at least have 6 character",
@@ -41,7 +41,7 @@ const Register = () => {
             title: "Good job",
             text: "You Have Successfully sign Up",
           });
-          console.log(result);
+          navigate("/");
         })
         .catch((error) => {
           Swal.fire({
@@ -55,9 +55,8 @@ const Register = () => {
   return (
     <div className="flex justify-center my-10 overflow-hidden">
       <div className="shadow-2xl">
-      <h1 className="text-4xl font-bold text-center py-5">Sign up</h1>
+        <h1 className="text-4xl font-bold text-center py-5">Sign up</h1>
         <div className="card lg:card-side rounded-none ">
-           
           <figure className="">
             <img
               src="https://images.unsplash.com/photo-1499914485622-a88fac536970?auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFwdG9wJTIwd2l0aCUyMGNvZmZlfGVufDB8fDB8fHww&w=500"

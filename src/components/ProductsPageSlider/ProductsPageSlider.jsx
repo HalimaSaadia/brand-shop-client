@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useLoaderData, useParams } from "react-router-dom";
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import 'swiper/css';
@@ -9,23 +9,11 @@ import 'swiper/css/navigation';
 import {Autoplay, Parallax, Pagination, Navigation } from 'swiper/modules';
 
 const ProductsPageSlider = () => {
+  const loadedData = useLoaderData()
 
-  const brand = useParams().brand;
-  const [sliders, setSliders] = useState([]);
+  const [sliders, setSliders] = useState(loadedData);
 
-
-  useEffect(() => {
-    fetch("/slider.json")
-      .then((res) => res.json())
-      .then((data) => {
-        setSliders(data);
-      });
-  }, []);
-
- 
-  const filteredSlider = sliders.filter(slider => slider.brand === brand)
-  console.log(filteredSlider)
-  if(filteredSlider.length){
+  if(sliders.length){
     return (
       <div className="my-10">
          <Swiper
@@ -47,12 +35,12 @@ const ProductsPageSlider = () => {
           className="mySwiper h-[300px] md:h-[500px] w-full"
         >
           
-          {filteredSlider.map(slider =>  <SwiperSlide className={`bg-no-repeat bg-cover `} style={{
+          {sliders.map(slider =>  <SwiperSlide className={`bg-no-repeat bg-cover `} style={{
               'background-image':`url(${slider.sliderBackground})`,
             }}>
               
-          <div className="flex h-full justify-center items-center md:p-10 hero-overlay bg-center">
-            <h1 className="text-xl md:text-4xl text-white font-bold text-center ">{slider.content}</h1>
+          <div className="flex h-full justify-center items-center md:p-10 hero-overlay bg-center ">
+            <h1 className="text-xl md:text-4xl text-white font-bold text-center md:px-10">{slider.content}</h1>
           </div>
         
           </SwiperSlide>)}
