@@ -14,8 +14,8 @@ const Product = ({ product }) => {
       <div className="card-body">
         <h2 className="card-title font-bold text-2xl">{name}</h2>
         <h3 className="text-xl font-bold">Brand: {brandName}</h3>
-        <p className="font-bold">Price: ${price}</p>
         <p className="font-semibold">category: {type}</p>
+        <p className="font-bold">Price: ${price}</p>
         <p className="font-semibold">Rating: {rating}</p>
 
         <Rating

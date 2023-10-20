@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const ErrorPage = () => {
   return (
     <div className="flex justify-center min-h-screen items-center">
-      <div className="card w-96 bg-base-100 shadow-xl">
+      <div className="card max-w-[390px]  bg-base-100 shadow-xl ">
         <figure className="px-10 pt-10">
           <img
             src="https://media.istockphoto.com/id/1200474333/photo/lifebuoy-404.webp?b=1&s=170667a&w=0&k=20&c=Yf0ZquiZuKEB-Y0iX0-gIHwNtPK01VrAfgTWFwsvubk="

@@ -1,4 +1,4 @@
-* Feature Of my Website
+ Feature Of my Website
 
 - My website is about electronic brand shop. Which sell gadget like earphone, phone, computer etc. There are Four
   Main Page In My website website. Home, Add product, My cart and login.
@@ -22,5 +22,5 @@
 
 - Once user is successfully logged in his/her information and a logout option will be shown on the navbar. 
 
-* My website name is TechHive
+My website name is TechHive
 * Here is the link of my website https://assignment10-brand-shop.web.app/

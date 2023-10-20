@@ -13,6 +13,7 @@ const ProductsPageSlider = () => {
 
   const [sliders, setSliders] = useState(loadedData);
 
+
   if(sliders.length){
     return (
       <div className="my-10">
@@ -35,8 +36,8 @@ const ProductsPageSlider = () => {
           className="mySwiper h-[300px] md:h-[500px] w-full"
         >
           
-          {sliders.map(slider =>  <SwiperSlide className={`bg-no-repeat bg-cover `} style={{
-              'background-image':`url(${slider.sliderBackground})`,
+          {sliders.map(slider =>  <SwiperSlide key={slider._id} className={`bg-no-repeat bg-cover `} style={{
+              'backgroundImage':`url(${slider.sliderBackground})`,
             }}>
               
           <div className="flex h-full justify-center items-center md:p-10 hero-overlay bg-center ">
