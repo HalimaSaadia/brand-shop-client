@@ -1,14 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import { AiFillStar } from "react-icons/ai";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import Swal from "sweetalert2";
 import Rating from "react-rating";
 import SectionHeading from "../../shared/SectionHeading/SectionHeading";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 const Details = () => {
+  const {user} = useContext(AuthContext)
+  const loggedInUser = user.email
+
   const product = useLoaderData();
   const { brandName, description, name, photo, price, rating, type } = product;
+
 
   const handleAddToCart = () => {
     const cartItem = {
@@ -19,6 +24,7 @@ const Details = () => {
       price,
       description,
       rating,
+      loggedInUser
     };
 
     fetch("https://10-brand-shop-server-six.vercel.app/cart", {
